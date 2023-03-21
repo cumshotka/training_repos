@@ -1,0 +1,15 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body class="container-fluid ">
+    <header class="row">{% include 'includes/header.html' %}</header>
+    <main class="row container">{% block main %}{% endblock %}</main>
+    <footer class="row">{% include 'includes/footer.html' %}</footer>
+</body>
+</html>
