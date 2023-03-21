@@ -47,7 +47,8 @@ class Animal(models.Model):
     color = models.ForeignKey(
         Color,
         verbose_name='Цвет питомца',
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        null=True,
     )
     kind = models.ForeignKey(
         KindOfAnimal,
