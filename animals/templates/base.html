@@ -1,10 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="icon" href="{% static 'img/icon.png' %}">
+  <title>{% block title %}Title{% endblock %}</title>
 </head>
-<body>
-
+<body class="container-fluid">
+  {% include 'includes/header.html' %}
+  {% block main %}<h1>Тело сайта</h1>{% endblock %}
+  {% include 'includes/footer.html' %}
 </body>
 </html>

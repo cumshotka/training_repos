@@ -4,4 +4,5 @@ from .models import *
 
 
 def index(request):
-    return render(request, 'posts/index.html')
+    pets = Animal.objects.all()
+    return render(request, 'posts/index.html', {'pets': pets})

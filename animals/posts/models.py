@@ -23,7 +23,7 @@ class Color(models.Model):
         'Цвет',
         max_length=50,
         unique=True
-    ),
+    )
     slug = models.SlugField(
         'Слаг цвета',
         max_length=50,
