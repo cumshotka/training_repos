@@ -18,7 +18,10 @@ class Animals(models.Model):
     title = models.CharField(max_length=30)
     kind = models.ForeignKey(KindOfAnimals, on_delete=models.CASCADE)
     description = models.TextField()
+    color = models.CharField(max_length=50)
+    lifetime = models.IntegerField()
     pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='media', null=True, blank=True)
 
     def __str__(self):
         return self.title
