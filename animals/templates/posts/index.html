@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load thumbnail %}
 
 {% block main %}
   <div class="container row">
     {% for pet in animals %}
       <div class="col-3">
-        <div class="card my-4 mx-4">
+        <div class="card my-4 mx-4 p-3">
           <h3 class="card-title text-center">{{ pet.title }}</h3>
           {% if pet.image %}
             <img class="card-img-top" src="{{ pet.image.url }}" width="300">
           {% else %}
-            <img class="card-img-top" src="{% static 'img/no_image.png' %}" width="400px">
+            {% thumbnail pet.image "300x300" crop="center" as img %}
+            <img class="card-img-top" src="{{ img.url }}" width="400px">
+            {% endthumbnail %}
           {% endif %}
           <p class="card-body">{{ pet.description }}</p>
           <p class="card-body text-end">{{ pet.pub_date|date:'d.m.Y' }}</p>
