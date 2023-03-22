@@ -11,7 +11,7 @@
           {% if pet.image %}
             <img class="card-img-top" src="{{ pet.image.url }}" width="300" height="auto">
           {% else %}
-            <img class="card-img-top" src="{% static 'img/no_image.png' %}" width="300px">
+            <img class="card-img-top" src="{% static 'img/no_image.avif' %}" width="300px">
           {% endif %}
           <p class="card-body">{{ pet.description }}</p>
           <p class="card-body text-end">{{ pet.pub_date|date:'d.m.Y' }}</p>

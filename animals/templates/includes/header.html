@@ -16,9 +16,9 @@
                 Виды животных
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Кошки</a></li>
-                <li><a class="dropdown-item" href="#">Собаки</a></li>
-                <li><a class="dropdown-item" href="#">Хомяки</a></li>
+                {% for cat in category %}
+                <li><a class="dropdown-item" href="#">{{ cat.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
         <div class="col-1">

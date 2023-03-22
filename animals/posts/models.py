@@ -27,6 +27,6 @@ class Animals(models.Model):
         return self.title
 
     class Meta:
-        ordering = ('-pub_date',)
+        ordering = ('-image', 'pub_date')
         verbose_name = 'Животные'
         verbose_name_plural = 'Животные'
